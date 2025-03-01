@@ -125,7 +125,7 @@ If you find our work useful for your projects, please kindly cite the following 
 
 ```latex
 @misc{zhou2024visualthinkerr1,
-      title={The Multimodal “Aha Moment” on 2B Model}, 
+      title={R1-Zero’s “Aha Moment” in Visual Reasoning on an 2B Non-SFT Model}, 
       author={Hengguang Zhou and Xirui Li and Ruochen Wang and Minhao Cheng and Tianyi Zhou and Cho-Jui Hsieh},
       journal= {arXiv preprint arXiv:XXXX.XXXXX},
       year={2025},
