@@ -1,4 +1,4 @@
-# VisionThinker-R1-Zero: First ever R1-Zero's Aha Moment on just a 2B non-SFT Base Model
+# VisionThinker-R1-Zero: First ever R1-Zero's Aha Moment on just a 2B non-SFT Model
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model)
 
 ![Reinforcement Learning](https://img.shields.io/badge/Algo-Reinforcement--Learning-red) 
@@ -7,7 +7,7 @@
 ![Qwen2-VL-2B](https://img.shields.io/badge/Model-Qwen2--VL--2B-green)
 ![Aha-Moment](https://img.shields.io/badge/Analysis-Aha--moment-blue) 
 
-VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) training on **2B non-SFT Base models**. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response** length on **visual reasoning** tasks.
+VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) training on **2B non-SFT models**. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response** length on **visual reasoning** tasks.
 
 For more details, please refer to the notion [report](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
 
