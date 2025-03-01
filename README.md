@@ -18,7 +18,7 @@ For more details, please refer to the notion [report](https://turningpointai.not
 > Training dynamics of our VisionThinker-R1-Zero training starting from the Qwen-VL-2B, without SFT or reward models. An aha moment and increasing response length is ever observed at a multimodal model.
 
 ## 🔮 Highlights
-1. We are the **first to successfully produce the emergent “aha moment” and increased response length** for multimodal reasoning on just a non-SFT 2B model.
+1. We are the **first to successfully produce the emergent “aha moment” and increased response length** for multimodal reasoning on just a **non-SFT 2B model**.
 2. We showed that **vision-centric** tasks could also benefit from improved reasoning capabilities.  
 
 Similar to DeepSeek R1, self reflection behavior is also observed during our RL training on vision-centric reasoning tasks. The model exhibits an emergent ability to rethink and correct its mistakes:
@@ -32,8 +32,8 @@ Maybe it's just higher than above the doorway, but slightly lower than above the
 ```
 
 ## 📢 Updates
-- 2025-02-26: We share our main findings in this [notion blog](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
-- 2025-02-26: We release the VisualThinker R1 Zero repo.
+- 2025-02-26: 🔥We share our main findings in this [notion blog](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
+- 2025-02-26: 🔥We release the VisualThinker R1 Zero repo.
 
 ## 🧱 Setup
 
@@ -50,14 +50,14 @@ bash prepare_dataset.sh
 ## 🏋️ Training
 
 ### GRPO Training
-To reproduce the multimodal aha moment, run the following code to train the unaligned base model with GRPO on SAT:
+To reproduce the multimodal aha moment, run the following code to train the non-SFT base model with GRPO on SAT:
 ```bash
 cd src/open-r1-multimodal
 bash run_grpo_SAT.sh # Adjust open-r1-multimodal/configs/zero3.yaml or zero2.yaml accordingly
 ```
 
 ### SFT Training
-To obtain SFT model for comparison, run the following code to train the unaligned base model on SAT:
+To obtain SFT model for comparison, run the following code to train the non-SFT base model on SAT:
 ```bash
 cd src/open-r1-multimodal
 bash run_sft.sh # Adjust open-r1-multimodal/configs/zero3.yaml or zero2.yaml accordingly
