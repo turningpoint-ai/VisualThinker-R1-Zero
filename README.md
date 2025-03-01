@@ -118,6 +118,10 @@ Here are the key contributors to this project:
 <sup>†</sup> Project Leads, <sup>*</sup> Main Advisor
 <sup>1</sup>University of California, Los Angeles, <sup>2</sup>Penn State University, <sup>3</sup>University of Maryland and <sup>4</sup>Google Research
 
+<div align="center">
+<img src="https://multimodal-r1.s3.us-west-1.amazonaws.com/TurningPoint_transparent.png" width="50" alt="logo-figure_00">
+</div>
+
 ## :white_check_mark: Cite
 
 If you find our work useful for your projects, please kindly cite the following BibTeX:
