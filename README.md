@@ -7,7 +7,7 @@
 ![Qwen2-VL-2B](https://img.shields.io/badge/Model-Qwen2--VL--2B-green)
 ![Aha-Moment](https://img.shields.io/badge/Analysis-Aha--moment-blue) 
 
-VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) in visual reasoning presented by [TurningPoint AI](https://www.turningpoint-ai.com/). We are **the first** to successfully observe **the emergent “aha moment”** and **increased response length** in **visual reasoning** on just a **2B non-SFT models**.
+VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) in visual reasoning. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response length** in **visual reasoning** on just a **2B non-SFT models**.
 
 For more details, please refer to the notion [report](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
 
@@ -111,7 +111,7 @@ We sincerely thank [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1), [Open
 
 ## 🤝 Contributors
 
-Here are the key contributors to this project:
+Here are the key contributors from [TurningPoint AI](https://www.turningpoint-ai.com/) to this project:
 
 [Hengguang Zhou](https://hengguangzhou.github.io/)<sup>1</sup><sup>†</sup>, [Xirui Li](https://xirui-li.github.io/)<sup>1</sup><sup>†</sup>, [Ruochen Wang](https://ruocwang.github.io/)<sup>1</sup><sup>*</sup>, [Minhao Cheng](https://cmhcbb.github.io/)<sup>2</sup>, [Tianyi Zhou](https://tianyizhou.github.io/)<sup>3</sup> and [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/)<sup>1</sup><sup>4</sup>
 
