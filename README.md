@@ -66,7 +66,7 @@ bash run_sft.sh # Adjust open-r1-multimodal/configs/zero3.yaml or zero2.yaml acc
 ## 📈 Evaluation
 
 ### CVBench Evaluation
-First change to evaluation directory:
+We provide following commands to reproduce our evaluation results on the CVBench. First change to evaluation directory:
 ```bash
 cd src/eval 
 ```
