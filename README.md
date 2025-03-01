@@ -113,9 +113,9 @@ We sincerely thank [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1), [Open
 
 Here are the key contributors to this project:
 
-[Hengguang Zhou](https://hengguangzhou.github.io/)<sup>1</sup><sup>*</sup>, [Xirui Li](https://xirui-li.github.io/)<sup>1</sup><sup>*</sup>, [Ruochen Wang](https://ruocwang.github.io/)<sup>1</sup>, [Minhao Cheng](https://cmhcbb.github.io/)<sup>2</sup>, [Tianyi Zhou](https://tianyizhou.github.io/)<sup>3</sup> and [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/)<sup>1</sup><sup>4</sup>
+[Hengguang Zhou](https://hengguangzhou.github.io/)<sup>1</sup><sup>†</sup>, [Xirui Li](https://xirui-li.github.io/)<sup>1</sup><sup>†</sup>, [Ruochen Wang](https://ruocwang.github.io/)<sup>1</sup><sup>*</sup>, [Minhao Cheng](https://cmhcbb.github.io/)<sup>2</sup>, [Tianyi Zhou](https://tianyizhou.github.io/)<sup>3</sup> and [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/)<sup>1</sup><sup>4</sup>
 
-<sup>*</sup> Project Leads
+<sup>†</sup> Project Leads, <sup>*</sup> Main Advisor
 <sup>1</sup>University of California, Los Angeles, <sup>2</sup>Penn State University, <sup>3</sup>University of Maryland and <sup>4</sup>Google Research
 
 ## :white_check_mark: Cite
