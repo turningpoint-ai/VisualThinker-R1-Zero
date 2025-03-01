@@ -74,7 +74,7 @@ cd src/open-r1-multimodal
 bash run_sft.sh # Adjust open-r1-multimodal/configs/zero3.yaml or zero2.yaml accordingly
 ```
 
-## Evaluation
+## 📈 Evaluation
 
 ### CVBench Evaluation
 First change to evaluation directory:
