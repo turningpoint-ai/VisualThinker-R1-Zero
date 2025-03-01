@@ -8,6 +8,8 @@
 
 VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) training on **small multimodal** models. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response** length on **multimodal** tasks.
 
+For more details, please refer to the notion report: [NOTION](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
+
 <div align="center">
 <img src="https://multimodal-r1.s3.us-west-1.amazonaws.com/Training_Steps.png" width="700" alt="visualthinking-intro-figure_00">
 </div>
