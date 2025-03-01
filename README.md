@@ -46,19 +46,19 @@ Maybe it's just higher than above the doorway, but slightly lower than above the
 - 2025-02-26: We release the VisualThinker R1 Zero repo.
 
 
-## Setup
+## 🧱 Setup
 
 ```bash
 bash setup.sh
 ```
-## Prepare Dataset
+## 🤗 Prepare Dataset
 
 ```bash
 cd src/data/SAT
 bash prepare_dataset.sh
 ```
 
-## Training
+## 🏋️ Training
 
 ### GRPO Training
 To reproduce the multimodal aha moment, run the following code to train the unaligned base model with GRPO on SAT:
