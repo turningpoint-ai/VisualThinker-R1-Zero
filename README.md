@@ -1,6 +1,6 @@
 <div align="center">
 
-# R1-Zero's Aha Moment for Visual reasoning, on just a 2B Base model!
+# VisionThinker-R1-Zero
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model)
 
@@ -18,10 +18,12 @@
 
 > Training dynamics of our VisionThinker-R1-Zero training starting from the Qwen-VL-2B, without SFT or reward models. An aha moment and increasing response length is ever observed at a multimodal model.
 
-[DeepSeek R1](https://arxiv.org/abs/2501.12948) has demonstrated how Reinforcement Learning (RL) with well-designed rule-based rewards can enable a large language model to build unique reasoning capabilities autonomously. Since then, many researchers have attempted to extend this success to multimodal reasoning. However, recent efforts primarily **struggle to reproduce the increasing response length and thinking pattern** exhibited by DeepSeek R1. 
 
-VisionThinker-R1-Zero is a replication of DeepSeek-R1-Zero training on **small multimodal** models. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response** length on **multimodal** tasks.
-Through applying GRPO on the 2B base LM develops self-verification autonomously and exhibits an emergent ability to "take another look" at the image and correct its mistakes.
+## 💥 First ever R1-Zero's Aha Moment for Visual reasoning, on just a 2B Base model!
+
+VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) training on **small multimodal** models. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response** length on **multimodal** tasks.
+
+### Contributions
 
 1. We are the **first to replicate the key characteristics** of R1 success (**”aha moment”** and **increasing reasoning length**) on **multimodal** reasoning tasks.
 
@@ -37,14 +39,9 @@ Maybe it's just higher than above the doorway, but slightly lower than above the
 . . .
 ```
 
-**Full experiment log:** Upcoming
-
-**Models CKPT:** Upcoming
-
-### Updates:
+## 📢 Updates
 - 2025-02-26: We share our main findings in this [notion blog](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
 - 2025-02-26: We release the VisualThinker R1 Zero repo.
-
 
 ## 🧱 Setup
 
@@ -106,7 +103,11 @@ python evaluate_Qwen2_VL_CVBench.py --model_path <path_to_your_model> \
     --bs 8 \
     --no-use_reasoning_prompt
 ```
+## 🔍 Resources
 
+**Full experiment log:** Upcoming
+
+**Models CKPT:** Upcoming
 
 ## :coffee: Stay Connected!
 
