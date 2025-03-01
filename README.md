@@ -1,6 +1,4 @@
-<div align="center">
-
-# VisionThinker-R1-Zero
+# VisionThinker-R1-Zero: First ever R1-Zero's Aha Moment for visual reasoning
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model)
 
@@ -10,8 +8,6 @@
 ![Qwen2-VL-2B](https://img.shields.io/badge/Model-Qwen2--VL--2B-green)
 ![Aha-Moment](https://img.shields.io/badge/Analysis-Aha--moment-blue) 
 
-</div>
-
 <div align="center">
 <img src="https://multimodal-r1.s3.us-west-1.amazonaws.com/Training_Steps.png" width="700" alt="visualthinking-intro-figure_00">
 </div>
@@ -19,7 +15,7 @@
 > Training dynamics of our VisionThinker-R1-Zero training starting from the Qwen-VL-2B, without SFT or reward models. An aha moment and increasing response length is ever observed at a multimodal model.
 
 
-## 💥 First ever R1-Zero's Aha Moment for Visual reasoning, on just a 2B Base model!
+## 💥 First ever R1-Zero's Aha Moment for visual reasoning, on just a 2B Base model!
 
 VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) training on **small multimodal** models. We are **the first** to successfully observe **the emergent “aha moment”** and **increased response** length on **multimodal** tasks.
 
