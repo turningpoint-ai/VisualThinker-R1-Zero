@@ -16,10 +16,8 @@ For more details, please refer to the notion report: [NOTION](https://turningpoi
 
 > Training dynamics of our VisionThinker-R1-Zero training starting from the Qwen-VL-2B, without SFT or reward models. An aha moment and increasing response length is ever observed at a multimodal model.
 
-## 🔮 Contributions
-
-1. We are the **first to replicate the key characteristics** of R1 success (**”aha moment”** and **increasing reasoning length**) on **multimodal** reasoning tasks.
-
+## 🔮 Highlights
+1. We are the **first to successfully produce the emergent “aha moment” and increased response length** for multimodal reasoning on just a non-SFT 2B model.
 2. We showed that **vision-centric** tasks could also benefit from improved reasoning capabilities.  
 
 Similar to DeepSeek R1, self reflection behavior is also observed during our RL training on vision-centric reasoning tasks. The model exhibits an emergent ability to rethink and correct its mistakes:
