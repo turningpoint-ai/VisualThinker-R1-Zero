@@ -10,7 +10,7 @@ VisionThinker-R1-Zero is a replication of [DeepSeek-R1-Zero](https://arxiv.org/a
 
 For more details, please refer to the notion report: 
 <div align="center">
-<img src="https://multimodal-r1.s3.us-west-1.amazonaws.com/TurningPoint_transparent.png" width="100" alt="logo-figure_00">
+[![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model)
 </div>
 
 <div align="center">
