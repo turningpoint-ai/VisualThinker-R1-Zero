@@ -116,6 +116,14 @@ We are always open to engaging discussions, collaborations, or even just sharing
 
 We sincerely thank [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1), [Open-R1](https://github.com/huggingface/open-r1), [QwenVL](https://github.com/QwenLM/Qwen2.5-VL), [Open-R1-Multimodal](https://github.com/EvolvingLMMs-Lab/open-r1-multimodal), [R1-V](https://github.com/Deep-Agent/R1-V), [SAT](https://arxiv.org/abs/2412.07755), and [CV-Bench](https://cambrian-mllm.github.io/) for providing open source resources that laid the foundation of our project. 
 
+## 🤝 Contributors
+
+Here are the key contributors to this project:
+
+[Hengguang Zhou](https://hengguangzhou.github.io/)<sup>1</sup>, [Xirui Li](https://xirui-li.github.io/)<sup>1</sup>, [Ruochen Wang](https://ruocwang.github.io/)<sup>1</sup>, [Minhao Cheng](https://cmhcbb.github.io/)<sup>2</sup>, [Tianyi Zhou](https://tianyizhou.github.io/)<sup>3</sup> and [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/)<sup>1</sup><sup>4</sup>
+
+<sup>1</sup>University of California, Los Angeles, <sup>2</sup>Penn State University, <sup>3</sup>University of Maryland and <sup>3</sup>Google Research
+
 ## :white_check_mark: Cite
 
 If you find our work useful for your projects, please kindly cite the following BibTeX:
