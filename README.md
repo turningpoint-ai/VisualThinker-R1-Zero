@@ -1,6 +1,6 @@
 <div align="center">
 
-# VisualThinker R1 Zero
+# R1-Zero's Aha Moment for Visual reasoning, on just a 2B Base model!
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model)
 
