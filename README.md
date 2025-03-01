@@ -50,14 +50,14 @@ bash prepare_dataset.sh
 ## 🏋️ Training
 
 ### GRPO Training
-To reproduce the multimodal aha moment, run the following code to train the non-SFT base model with GRPO on SAT:
+To reproduce the multimodal aha moment, run the following code to train the non-SFT model with GRPO on SAT:
 ```bash
 cd src/open-r1-multimodal
 bash run_grpo_SAT.sh # Adjust open-r1-multimodal/configs/zero3.yaml or zero2.yaml accordingly
 ```
 
 ### SFT Training
-To obtain SFT model for comparison, run the following code to train the non-SFT base model on SAT:
+To obtain SFT model for comparison, run the following code to train the non-SFT model on SAT:
 ```bash
 cd src/open-r1-multimodal
 bash run_sft.sh # Adjust open-r1-multimodal/configs/zero3.yaml or zero2.yaml accordingly
