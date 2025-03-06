@@ -35,6 +35,14 @@ Maybe it's just higher than above the doorway, but slightly lower than above the
 - 2025-02-26: 🔥We share our main findings in this [notion blog](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
 - 2025-02-26: 🔥We release the VisualThinker R1 Zero repo.
 
+## Hardware Requirements
+
+\* *estimated*
+
+| Method                   | Bits |   2B   |
+| ------------------------ | ---- | ------ |
+| GRPO Full Fine-Tuning    |  AMP | 4*80GB |
+
 ## 🧱 Setup
 
 ```bash
