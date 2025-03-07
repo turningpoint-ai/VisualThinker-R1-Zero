@@ -76,6 +76,9 @@ SYSTEM_PROMPT = (
     "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
     "<think> reasoning process here </think><answer> answer here </answer>"
 )
+CHAT_TEMPLATE = {
+    "chat_template": "{% set image_count = namespace(value=0) %}{% set video_count = namespace(value=0) %}{% for message in messages %}{% if loop.first and message['role'] != 'system' %}<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n{% endif %}<|im_start|>{{ message['role'] }}\n{% if message['content'] is string %}{{ message['content'] }}<|im_end|>\n{% else %}{% for content in message['content'] %}{% if content['type'] == 'image' or 'image' in content or 'image_url' in content %}{% set image_count.value = image_count.value + 1 %}{% if add_vision_id %}Picture {{ image_count.value }}: {% endif %}<|vision_start|><|image_pad|><|vision_end|>{% elif content['type'] == 'video' or 'video' in content %}{% set video_count.value = video_count.value + 1 %}{% if add_vision_id %}Video {{ video_count.value }}: {% endif %}<|vision_start|><|video_pad|><|vision_end|>{% elif 'text' in content %}{{ content['text'] }}{% endif %}{% endfor %}<|im_end|>\n{% endif %}{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}"
+}
 
 # oracle answer 
 
@@ -104,106 +107,30 @@ def main(script_args, training_args, model_args):
     ################
     # dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
 
-    if script_args.dataset_name == "LLaVA-OneVision-Data":
-        def make_conversation(example, source="LLaVA-OneVision-Data"):
-            if source == "LLaVA-OneVision-Data":
-                return [{"role": "system",
-                        "content": [{"type": "text", "text": SYSTEM_PROMPT}],
-                            },
-                            {
-                                "role": "user",
-                                "content": [
-                                    {
-                                        "type": "image",
-                                        "image": example["image"],
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": example["conversations"][0]["value"],
-                                    },
-                                ],
-                            },
-                            {
-                                "role": "assistant",
-                                "content": [{"type": "text", "text": example["conversations"][1]["value"]}],
-                            },
-                        ]
-            elif source == "multimodal-open-r1-8k-verified":
-                return [{"role": "system",
-                        "content": [{"type": "text", "text": SYSTEM_PROMPT}],
-                            },
-                            {
-                                "role": "user",
-                                "content": [
-                                    {
-                                        "type": "image",
-                                        "image": example["image"],
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": example["problem"],
-                                    },
-                                ],
-                            },
-                            {
-                                "role": "assistant",
-                                "content": [{"type": "text", "text": example["solution"]}],
-                            },
-                        ]
-            data_list = ['CLEVR-Math(MathV360K)', 'GEOS(MathV360K)', 'Geometry3K(MathV360K)', 'UniGeo(MathV360K)', 'TabMWP(MathV360K)', 'FigureQA(MathV360K)']
-        
-            dataset_list = []
-            data_len = []
-
-            for data_name in data_list:
-                data = load_dataset("lmms-lab/LLaVA-OneVision-Data", data_name, split="train")
-                dataset_list.append(data)
-                data_len.append(len(data))
-
-            dataset = []
-            # random sample dataset with ratio 0.2
-            for i in range(len(dataset_list)):
-                dataset_list[i] = dataset_list[i].shuffle(seed=42).select(range(int(data_len[i]*0.1)))
-                dataset += [make_conversation(example) for example in dataset_list[i]]
-
-            dataset_list = load_dataset("lmms-lab/multimodal-open-r1-8k-verified", split="train")
-            dataset = [make_conversation(example, source="multimodal-open-r1-8k-verified") for example in dataset_list]
-    elif script_args.dataset_name == "SAT":
+    if script_args.dataset_name == "SAT":
         def make_conversation_sat(example):
-            if model_args.model_name_or_path.split("/")[-1] == "Qwen2-VL-2B":
-                image = Image.open(dataset_prefix + example["images"][0])
-                question = example["messages"][0]["content"]
-                question = question.replace("<image>", "")
-                prompt = f'A conversation between User and Assistant. The user asks a question, and the Assistant solves it. \nUser: {question} \nAssistant:'
-                return [{"image": image,
-                    "prompt": [
-                                {"type": "image"},
-                                {"type": "text", "text": "<image>" + prompt}],
-                    "solution":  example["messages"][1]["content"], 
-                }]
-            else:
-                return [
-                                {
-                                    "role": "user",
-                                    "content": [
-                                        {
-                                            "type": "image",
-                                            "image": dataset_prefix + example["images"][0],
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": example["messages"][0]["content"],
-                                        },
-                                    ],
-                                },
-                                {
-                                    "role": "assistant",
-                                    "content": [{"type": "text", "text": example["messages"][1]["content"]}],
-                                },
-                            ]
+            return [
+                            {
+                                "role": "user",
+                                "content": [
+                                    {
+                                        "type": "image",
+                                        "image": dataset_prefix + example["images"][0],
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": example["messages"][0]["content"],
+                                    },
+                                ],
+                            },
+                            {
+                                "role": "assistant",
+                                "content": [{"type": "text", "text": example["messages"][1]["content"]}],
+                            },
+                        ]
 
-        dataset_prefix = "/workspace/Multimodal-R1/src/data/"
-        dataset_path = "SAT/SAT_train_15000.json"
+        dataset_prefix = "../data/SAT/"
+        dataset_path = "SAT_train_15000.json"
         
         import json
         # load json file 
@@ -212,9 +139,6 @@ def main(script_args, training_args, model_args):
         # import pdb; pdb.set_trace()
         dataset = [make_conversation_sat(sample) for sample in sat_dataset]
 
-        # dataset = {'train': dataset}
-        num_samples = 4800
-        dataset = dataset[:num_samples]
         print("Dataset is ready")
 
     dataset = CustomDataset(dataset)
@@ -227,13 +151,9 @@ def main(script_args, training_args, model_args):
     def collate_fn(examples):
         # Get the texts and images, and apply the chat template
         texts = [
-            processor.apply_chat_template(example, tokenize=False) for example in examples
-        ]  # Prepare texts for processing
-
-        if model_args.model_name_or_path.split("/")[-1] == "Qwen2-VL-2B":
-            image_inputs = [example[0]['image'] for example in examples]  # Process the images to extract inputs
-        else:
-            image_inputs = [process_vision_info(example)[0] for example in examples]
+        processor.apply_chat_template(example, CHAT_TEMPLATE['chat_template'], tokenize=False) for example in examples
+            ]  # Prepare texts for processing
+        image_inputs = [process_vision_info(example)[0] for example in examples]
 
         # Tokenize the texts and process the images
         batch = processor(
@@ -254,50 +174,6 @@ def main(script_args, training_args, model_args):
         for image_token_id in image_tokens:
             labels[labels == image_token_id] = -100  # Mask image token IDs in labels
             
-        batch["labels"] = labels  # Add labels to the batch
-
-        return batch
-    
-    def collate_fn_progressive(examples, progress_ratio=0):
-        # Get the texts and images, and apply the chat template
-        texts = [
-            processor.apply_chat_template(example, tokenize=False) for example in examples
-        ]  # Prepare texts for processing
-
-        image_inputs = [process_vision_info(example)[0] for example in examples]  # Process the images to extract inputs
-
-        # Tokenize the texts and process the images
-        batch = processor(
-            text=texts, images=image_inputs, return_tensors="pt", padding=True
-        )  # Encode texts and images into tensors
-
-        # The labels are the input_ids, and we mask the padding tokens in the loss computation
-        labels = batch["input_ids"].clone()  # Clone input IDs for labels
-        labels[labels == processor.tokenizer.pad_token_id] = -100  # Mask padding tokens in labels
-
-        # Ignore the image token index in the loss computation (model specific)
-        if isinstance(processor, Qwen2VLProcessor):  # Check if the processor is Qwen2VLProcessor
-            image_tokens = [151652, 151653, 151655]  # Specific image token IDs for Qwen2VLProcessor
-        else:
-            image_tokens = [processor.tokenizer.convert_tokens_to_ids(processor.image_token)]  # Convert image token to ID
-
-        # Mask image token IDs in the labels
-        for image_token_id in image_tokens:
-            labels[labels == image_token_id] = -100  # Mask image token IDs in labels
-
-        for i, example in enumerate(examples):
-            # Extract the answer tokens
-            answer = example['answer']
-            answer_tokens = processor.tokenizer(answer)['input_ids']
-
-            # Determine the split point based on progress_ratio
-            split_idx = int(len(answer_tokens) * progress_ratio)
-            
-            # Mask tokens beyond the split point
-            start_idx = (labels[i] != -100).nonzero(as_tuple=True)[0][-len(answer_tokens):][0]
-            labels[i, start_idx + split_idx : start_idx + len(answer_tokens)] = -100
-            
-        # import pdb; pdb.set_trace()
         batch["labels"] = labels  # Add labels to the batch
 
         return batch
@@ -310,8 +186,7 @@ def main(script_args, training_args, model_args):
                                                     attn_implementation="flash_attention_2",
     )
 
-    min_pixels = 256*28*28
-    max_pixels = 156800
+    max_pixels = 512*28*28
     model.visual.requires_grad_ = True
     processor = Qwen2VLProcessor.from_pretrained(model_args.model_name_or_path, max_pixels=max_pixels, padding_side='right')
 
@@ -319,8 +194,6 @@ def main(script_args, training_args, model_args):
     training_args.dataset_text_field = ""
     training_args.dataset_kwargs = {"skip_prepare_dataset": True}
 
-    progressive_training = False
-    # import pdb; pdb.set_trace()
     trainer = SFTTrainer(
         model=model,
         args=training_args,
@@ -328,7 +201,7 @@ def main(script_args, training_args, model_args):
         eval_dataset=None,
         peft_config=get_peft_config(model_args),
         tokenizer=processor.tokenizer,
-        data_collator=collate_fn if not progressive_training else collate_fn_progressive,
+        data_collator=collate_fn,
     )
 
     trainer.train()
