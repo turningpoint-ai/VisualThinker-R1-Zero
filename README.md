@@ -132,12 +132,14 @@ Here are the key contributors from [TurningPoint AI](https://www.turningpoint-ai
 If you find our work useful for your projects, please kindly cite the following BibTeX:
 
 ```latex
-@misc{zhou2024visualthinkerr1,
-      title={R1-Zero’s “Aha Moment” in Visual Reasoning on an 2B Non-SFT Model}, 
+@misc{zhou2025r1zerosahamomentvisual,
+      title={R1-Zero's "Aha Moment" in Visual Reasoning on a 2B Non-SFT Model}, 
       author={Hengguang Zhou and Xirui Li and Ruochen Wang and Minhao Cheng and Tianyi Zhou and Cho-Jui Hsieh},
-      journal= {arXiv preprint arXiv:XXXX.XXXXX},
       year={2025},
-      url={https://arxiv.org/abs/XXXX.XXXXX}
+      eprint={2503.05132},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2503.05132}, 
 }
 ```
 
