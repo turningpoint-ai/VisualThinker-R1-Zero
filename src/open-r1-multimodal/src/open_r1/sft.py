@@ -37,7 +37,7 @@ accelerate launch --config_file=configs/zero3.yaml src/open_r1/sft.py \
 import torch
 
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoProcessor
+from transformers import AutoTokenizer, AutoProcessor, default_data_collator
 from qwen_vl_utils import process_vision_info
 
 from trl import (
@@ -189,6 +189,7 @@ def main(script_args, training_args, model_args):
     max_pixels = 512*28*28
     model.visual.requires_grad_ = True
     processor = Qwen2VLProcessor.from_pretrained(model_args.model_name_or_path, max_pixels=max_pixels, padding_side='right')
+    processor.chat_template = CHAT_TEMPLATE["chat_template"]
 
     training_args.model_init_kwargs = None
     training_args.dataset_text_field = ""
