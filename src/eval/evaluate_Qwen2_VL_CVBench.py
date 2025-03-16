@@ -84,7 +84,17 @@ if __name__ == "__main__":
     }
     final_output = []
     if not PRECOMPUTED_RESULT:
-        #We recommend enabling flash_attention_2 for better acceleration and memory saving, especially in multi-image and video scenarios.
+        # Handle after SFT on base model, the chat template is not saved [bugs in current transformer version].
+        # Check template
+        template_path = os.path.join(MODEL_PATH, '/chat_template.json')
+        if os.path.exists(template_path):
+            print(f"Template found at {template_path}.")
+        else:
+            from huggingface_hub import hf_hub_download
+            hf_hub_download(repo_id="Qwen/Qwen2-VL-2B-Instruct", filename='chat_template.json', local_dir=MODEL_PATH)
+            print(f"Template downloaded for {MODEL_PATH}.")
+            
+        # We recommend enabling flash_attention_2 for better acceleration and memory saving, especially in multi-image and video scenarios.
         model = Qwen2VLForConditionalGeneration.from_pretrained(
             MODEL_PATH,
             torch_dtype=torch.bfloat16,
