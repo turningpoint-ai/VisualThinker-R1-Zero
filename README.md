@@ -32,6 +32,7 @@ Maybe it's just higher than above the doorway, but slightly lower than above the
 ```
 
 ## 📢 Updates
+- 2025-03-16: 🤗We released the model [checkpoint](https://huggingface.co/turningpoint-ai/VisualThinker-R1-Zero) at huggingface!
 - 2025-02-26: 🔥We share our main findings in this [notion blog](https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model).
 - 2025-02-26: 🔥We release the VisualThinker R1 Zero repo.
 
