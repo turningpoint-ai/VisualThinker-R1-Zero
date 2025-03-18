@@ -108,7 +108,7 @@ python evaluate_Qwen2_VL_CVBench.py --model_path <path_to_your_model> \
 
 **Full experiment log:** Upcoming
 
-**Models CKPT:** Upcoming
+**Models CKPT:** [🤗VisualThinker-R1-Zero](https://huggingface.co/turningpoint-ai/VisualThinker-R1-Zero) at huggingface
 
 ## :coffee: Stay Connected!
 
